@@ -1,7 +1,9 @@
 from flask import Flask, app
 from flask_cors import CORS
-from flask_restful import Resource, Api
-from read_applications import Applications
+from flask_restful import Api
+
+import utils
+from apps import Apps
 from amp import AmpApps
 from global_apps import Global
 
@@ -11,9 +13,9 @@ api = Api(app)
 CORS(app)
 
 
-api.add_resource(Applications, '/applications', endpoint='apps',  )
-api.add_resource(Global, '/global', endpoint='global')
+api.add_resource(Apps, '/applications', endpoint='apps')
 api.add_resource(AmpApps, '/amp', endpoint='amp')
+api.add_resource(Global, '/global', endpoint='global')
 
 if __name__ == "__main__":
-     app.run(debug=True)
+    app.run(debug=True)

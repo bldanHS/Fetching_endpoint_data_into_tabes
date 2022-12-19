@@ -1,10 +1,7 @@
-
-from flask import Flask, app
 from flask_restful import Resource
-from read_applications import Applications
-
+from utils import read_csv
 
 
 class Global(Resource):
     def get(self):
-        return GLOBAL
+        return read_csv("/amp_global_applications.csv")
