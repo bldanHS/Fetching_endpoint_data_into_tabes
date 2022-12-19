@@ -2,7 +2,8 @@ from flask import Flask, app
 from flask_cors import CORS
 from flask_restful import Api
 
-import utils
+from flask_restful import Resource
+
 from apps import Apps
 from amp import AmpApps
 from global_apps import Global

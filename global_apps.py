@@ -5,3 +5,4 @@ from utils import read_csv
 class Global(Resource):
     def get(self):
         return read_csv("/amp_global_applications.csv")
+        
