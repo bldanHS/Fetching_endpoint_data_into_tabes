@@ -1,4 +1,4 @@
-from flask import Flask, request, send_file
+from flask import Flask
 from flask_restful import Resource , Api
 import json
 import csv
@@ -8,17 +8,7 @@ import http
 
 
 
-class Applications(Resource):
-    def get(self):
-        return APPLICATIONS
 
-class Global(Resource):
-    def get(self):
-        return GLOBAL
-
-class Ampapps(Resource):
-    def get(self):
-        return AMP_APPS
 
 
    
@@ -42,9 +32,9 @@ APPLICATIONS = []
 GLOBAL = []
 AMP_APPS = []
 
-with open("amp_tables_o/amp_organization_applications.csv") as f:
+with open("amp_tables_o/amp_organization_applications.csv") as file:
     
-    applications = csv.DictReader(f)
+    applications = csv.DictReader(file)
 
     for application in applications:
          #if (application["organizationId"] == )
@@ -64,17 +54,17 @@ with open("amp_tables_o/amp_organization_applications.csv") as f:
 
 
 
-with open("amp_tables_o/amp_applications.csv") as f:
+with open("amp_tables_o/amp_applications.csv") as file:
     
-    amps = csv.DictReader(f)
+    amps = csv.DictReader(file)
 
     for amp in amps:
          AMP_APPS.append(amp)
 
 
-with open("amp_tables_o/amp_global_applications.csv") as f:
+with open("amp_tables_o/amp_global_applications.csv") as file:
     
-    globals = csv.DictReader(f)
+    globals = csv.DictReader(file)
 
     for glob in globals:
          GLOBAL.append(glob)
