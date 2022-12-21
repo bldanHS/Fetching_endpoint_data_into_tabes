@@ -65,8 +65,8 @@ tr:first-child {
     border-bottom: 1px solid  #009578;
 }
 
-@media (max-width: 500px){
-    .table{
-        
+@media (min-width: 500px){
+    body{
+        color: aqua;        
     }
 }
