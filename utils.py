@@ -3,12 +3,14 @@ import json
 
 PATH = "amp_tables_o"
 
-def read_csv(filename):
+def read_csv(filename, pagesize=20):
     LIST = []
     with open(f"{PATH}{filename}") as file:
         dict = (csv.DictReader(file))
         for row in dict:
             LIST.append(row)
+
+        LIST.append({"pagesize" : pagesize })
         return LIST
 
 
