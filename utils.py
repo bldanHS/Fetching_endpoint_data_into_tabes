@@ -11,10 +11,11 @@ def read_csv(filename):
             LIST.append(row)
         return LIST
 
+def filter_results(list, value, offset):
+    
+    filtered_elements = list[:value]
+    return filtered_elements
+    
 
 arr = ["/amp_applications.csv", "/amp_organization_applications.csv","/amp_global_applications.csv" ]
-
-
-for filename in arr:
-    read_csv(filename)
 
