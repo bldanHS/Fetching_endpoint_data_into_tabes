@@ -12,11 +12,12 @@ def read_csv(filename):
         return LIST
 
 def filter_results(dict, page, thpage):
-    # if(page >= dict.len()):
-        # raise IndexError ( "list index out of range")
+    if(page >= len(dict)):
+        raise IndexError ( "list index out of range")
+    # elif(thpage = ):
+    #     s
     filtered_elements = dict[thpage:thpage+page]
-    return filtered_elements
+    return filtered_elements    
     
 
-arr = ["/amp_applications.csv", "/amp_organization_applications.csv","/amp_global_applications.csv" ]
 
