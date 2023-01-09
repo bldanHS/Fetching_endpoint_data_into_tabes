@@ -7,7 +7,8 @@ class Global(Resource):
         self.requestparams = requestparams
 
     def get(self):
+        page = self.requestparams.get("limit", 1, type=int)
+        thpage = self.requestparams.get("start", 0, type=int)
         filecontent = read_csv("/amp_global_applications.csv")
-        rendervalue = self.requestparams.get("renderingamount", type=int)
-        return filter_results(filecontent, rendervalue)
+        return filter_results(filecontent, page, thpage)
         

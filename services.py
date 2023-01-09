@@ -2,8 +2,6 @@ from flask import Flask, app, request
 from flask_cors import CORS
 from flask_restful import Api
 
-from flask_restful import Resource
-
 from apps import Apps
 from amp import AmpApps
 from global_apps import Global
@@ -13,9 +11,6 @@ from global_apps import Global
 app = Flask(__name__)
 api = Api(app)
 CORS(app)
-
-def serve_file(filename, query_params):
-    return filename
 
 @app.route('/amp', methods =['GET'])
 def get_amp_applications():

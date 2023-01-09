@@ -1,5 +1,5 @@
 import csv
-import json
+
 
 PATH = "amp_tables_o"
 
@@ -11,9 +11,8 @@ def read_csv(filename):
             LIST.append(row)
         return LIST
 
-def filter_results(list, value, offset):
-    
-    filtered_elements = list[:value]
+def filter_results(dict, page, thpage):
+    filtered_elements = dict[thpage:thpage+page]
     return filtered_elements
     
 
