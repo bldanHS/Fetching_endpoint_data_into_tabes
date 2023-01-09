@@ -1,6 +1,5 @@
 import csv
 
-
 PATH = "amp_tables_o"
 
 def read_csv(filename):
@@ -11,15 +10,10 @@ def read_csv(filename):
             LIST.append(row)
         return LIST
 
-def filter_results(dict, page, thpage):
-    if(page >= len(dict)):
-        raise IndexError ( "list index out of range")
-    # elif(thpage = ):
-    #     s
-    filtered_elements = dict[(thpage*page):page]
-    print(dict[page*thpage])
-    
-    return filtered_elements
+
+def get_items(list_of_content, offset=0, per_page=10):
+    return list_of_content[offset: offset+per_page]
+
 
 
     
