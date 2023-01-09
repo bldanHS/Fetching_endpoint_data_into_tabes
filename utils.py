@@ -16,8 +16,12 @@ def filter_results(dict, page, thpage):
         raise IndexError ( "list index out of range")
     # elif(thpage = ):
     #     s
-    filtered_elements = dict[thpage:thpage+page]
-    return filtered_elements    
+    filtered_elements = dict[(thpage*page):page]
+    print(dict[page*thpage])
+    
+    return filtered_elements
+
+
     
 
 
