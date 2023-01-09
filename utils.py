@@ -12,6 +12,8 @@ def read_csv(filename):
         return LIST
 
 def filter_results(dict, page, thpage):
+    # if(page >= dict.len()):
+        # raise IndexError ( "list index out of range")
     filtered_elements = dict[thpage:thpage+page]
     return filtered_elements
     
