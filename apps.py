@@ -1,5 +1,5 @@
 from flask_restful import Resource
-from utils import read_csv , filter_results
+from utils import returning_data_to_endpoint
 
 
 class Apps(Resource):
@@ -7,7 +7,5 @@ class Apps(Resource):
         self.requestparams = requestparams
 
     def get(self):
-        page = self.requestparams.get("limit", 1, type=int)
-        thpage = self.requestparams.get("start", 0, type=int)
-        filecontent = read_csv("/amp_organization_applications.csv")
-        return filter_results(filecontent, page, thpage)
+        return returning_data_to_endpoint("/amp_organization_applications.csv")
+       
